@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/loginPage.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="alert-error"></div>
+      <header>
+        <section class="headerSection">
+          <img src="../img/logo.svg" alt="Logo" />
+          <h1 class="h1">Lorem Ipsum</h1>
+        </section>
+      </header>
+      <main>
+        <section class="loginBlock">
+          <div class="wrapper">
+            <span class="loginText">Login to your account</span>
+            <div class="containerForm">
+              <section class="emailForm">
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Email"
+                  class="input__TypeSecond"
+                  required
+                />
+              </section>
+              <section class="passwordForm">
+                <div class="passwordWrapper">
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    class="input__TypeThird"
+                    id="password-input"
+                    required
+                  />
+                  <div
+                    class="toggle-visibility"
+                    id="toggle-visibility"
+                    onclick="togglePasswordVisibility()"
+                  >
+                    <img
+                      src="../img/eyePassword.svg"
+                      alt="eye"
+                      class="eyeImg"
+                    />
+                  </div>
+                </div>
+              </section>
+              <section class="termsForm">
+                <label class="radioLabel">
+                  <input
+                    type="radio"
+                    class="radioButton"
+                    name="radio"
+                    id="alert-error"
+                    required
+                  />
+                  Remember me
+                </label>
+                <span class="forgotPassword" id="forgotPassword"
+                  >Forgot Password?</span
+                >
+              </section>
+            </div>
+            <section class="buttonSection">
+              <button class="signButton" id="button">Sign up with email</button>
+            </section>
+            <section class="divider__container">
+              <div class="divider__line1"></div>
+              <div class="divider__text">Or Login with</div>
+              <div class="divider__line2"></div>
+            </section>
+            <section class="linkSection">
+              <div class="authButton">
+                <img src="../img/google.svg" alt="Google Logo" />
+                <span>Google</span>
+              </div>
+              <div class="authButton">
+                <img src="../img/apple.svg" alt="Apple Logo" />
+                <span>Apple</span>
+              </div>
+            </section>
+            <section class="footer">
+              <p class="footerText">
+                Don’t have an account?
+                <button class="greenText line-to-side" id="linkButton">
+                  Get Started
+                </button>
+              </p>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="../JS/login.js"></script>
+    <script src="../JS/app.js"></script>
+  </body>
+</html>
