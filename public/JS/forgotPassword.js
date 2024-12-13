@@ -13,52 +13,120 @@ toggleVisibility.addEventListener("click", () => {
   }
 });
 
-function validateLogin() {
-  let isValid = true;
-
-  function markFieldAsError(field) {
-    field.classList.add("input-error");
-    isValid = false;
-  }
-
-  function clearError(field) {
-    field.classList.remove("input-error");
-  }
-
-  if (!password.value.trim()) {
-    markFieldAsError(password);
-  } else {
-    clearError(password);
-  }
-
-  if (!newPassword.value.trim()) {
-    markFieldAsError(newPassword);
-  } else {
-    clearError(newPassword);
-  }
-
-  return isValid;
-}
-
-function validatePasswords() {
-  if (password.value !== newPassword.value) {
-    alert("Пароли не совпадают!");
-    password.classList.add("input-error");
-    newPassword.classList.add("input-error");
-    return false;
-  }
-
-  return true;
-}
-
 document.addEventListener("DOMContentLoaded", function () {
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("password-input");
+  const newPasswordInput = document.getElementById("newPasswordInput");
   const button = document.getElementById("button");
+  const alertError = document.getElementById("alert-error");
 
-  button.addEventListener("click", (event) => {
-    if (!validateLogin() || !validatePasswords()) {
-      event.preventDefault();
-    } else {
-      window.location.href = "../html/loginPage.html";
+  async function fetchUsers() {
+    try {
+      const response = await fetch("http://localhost:3000/users");
+      if (!response.ok) {
+        throw new Error("Ошибка получения user");
+      }
+      return await response.json();
+    } catch (error) {
+      console.error("Ошибка получения user:", error);
+      return [];
     }
-  });
+  }
+
+  async function updateUser(userId, updatedData) {
+    try {
+      const response = await fetch(`http://localhost:3000/users/${userId}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Ошибка обновления пользователя");
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error("Ошибка обновления пользователя:", error);
+    }
+  }
+
+  function validateFields() {
+    const password = passwordInput.value.trim();
+    const newPassword = newPasswordInput.value.trim();
+
+    let isValid = true;
+
+    function markFieldAsError(field) {
+      field.classList.add("input-error");
+      isValid = false;
+    }
+
+    function clearError(field) {
+      field.classList.remove("input-error");
+    }
+
+    if (!email) {
+      markFieldAsError(emailInput);
+    } else {
+      clearError(emailInput);
+    }
+
+    if (!password) {
+      markFieldAsError(passwordInput);
+    } else {
+      clearError(passwordInput);
+    }
+
+    if (!newPassword) {
+      markFieldAsError(newPasswordInput);
+    } else {
+      clearError(newPasswordInput);
+    }
+
+    if (password !== newPassword) {
+      markFieldAsError(newPasswordInput);
+      alertError.textContent = "Пароли не совпадают";
+      alertError.style.color = "red";
+      isValid = false;
+    } else {
+      clearError(newPasswordInput);
+    }
+
+    return isValid;
+  }
+
+  async function changePassword(event) {
+    event.preventDefault();
+
+    if (!validateFields()) {
+      return;
+    }
+
+    const email = emailInput.value.trim();
+    const newPassword = newPasswordInput.value.trim();
+
+    const users = await fetchUsers();
+
+    const user = users.find((user) => user.email === email);
+
+    if (!user) {
+      alertError.textContent = "Пользователь с указанным email не найден";
+      alertError.style.color = "red";
+      return;
+    }
+
+    await updateUser(user.id, { password: newPassword });
+
+    alertError.textContent = "Пароль успешно обновлен";
+    alertError.style.color = "green";
+
+    setTimeout(() => {
+      window.location.href = "../html/loginPage.html";
+    }, 1000);
+  }
+
+  button.addEventListener("click", changePassword);
 });

@@ -256,6 +256,7 @@ input {
 
 input[type="radio"] {
   -webkit-appearance: none;
+  appearance: none;
   width: 20px; /* Общий размер кнопки */
   height: 20px;
   border-radius: 50%;
@@ -284,4 +285,11 @@ input[type="radio"]::before {
 input[type="radio"]:checked::before {
   background-color: #008ffd;
   transform: translate(-50%, -50%) scale(1);
+}
+
+#error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
 }

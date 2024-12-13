@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Ivan",
+      "lastname": "Fedoseev",
+      "email": "Kfur4ik@gmail.com",
+      "password": "1"
+    },
+    {
+      "id": "2",
+      "name": "Kirill",
+      "lastname": "Parshin",
+      "email": "ParshinKirill@gmail.com",
+      "password": "2"
+    },
+    {
+      "id": "3",
+      "name": "Daria",
+      "lastname": "Yakovleva",
+      "email": "YakovlevaDaria@gmail.com",
+      "password": "FFkfur4ik"
+    },
+    {
+      "id": "4",
+      "firstName": "Иван",
+      "lastName": "Федосеев",
+      "email": "Ceyyyn97@gmail.com",
+      "password": "FFkfur4ik"
+    }
+  ]
+}
