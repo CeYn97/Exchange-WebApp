@@ -126,11 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   signUpButton.addEventListener("click", registrationUsers);
 
-  forgotPasswordButton.addEventListener("click", () => {
-    window.location.href = "../html/forgotPassword.html";
-  });
-
   linkButton.addEventListener("click", () => {
-    window.location.href = "../html/registrationPage.html";
+    window.location.href = "../html/loginPage.html";
   });
 });
