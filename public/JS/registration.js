@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const emailInput = document.getElementById("email");
   const passwordInput = document.getElementById("password-input");
   const signUpButton = document.getElementById("button");
-  const forgotPasswordButton = document.getElementById("forgotPassword");
   const linkButton = document.getElementById("linkButton");
   const alertError = document.getElementById("alert-error");
 
@@ -127,6 +126,6 @@ document.addEventListener("DOMContentLoaded", function () {
   signUpButton.addEventListener("click", registrationUsers);
 
   linkButton.addEventListener("click", () => {
-    window.location.href = "../html/loginPage.html";
+    window.location.href = "../html/registrationPage.html";
   });
 });
