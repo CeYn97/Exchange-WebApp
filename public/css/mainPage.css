@@ -10,7 +10,199 @@
   --color-darkGrey: #747681;
 }
 
+body {
+  font-family: "Urbanist";
+  display: flex;
+  min-height: 100vh;
+}
+
+.layout {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.nav-item.active {
+  background-color: var(--liteGreen);
+  border-radius: 10px;
+}
+
+.sidebar__nav .nav-item a .icon {
+  transition: fill 0.3s ease; /* Плавное изменение цвета */
+}
+
+/* Когда элемент находится в фокусе или на него наведена мышь */
+.sidebar__nav .nav-item:hover a .icon {
+  fill: black; /* Изменяем цвет иконки на черный */
+}
+
+/* Чтобы по умолчанию иконки были в цвете (например, темно-серый) */
+.sidebar__nav .nav-item a .icon {
+  fill: #04091e; /* Основной цвет для иконок */
+}
+
+.nav-item.active .icon {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%)
+    contrast(100%);
+}
+
+.nav-item.active .icon:hover {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%)
+    contrast(100%);
+}
+
+.sidebar {
+  width: 250px;
+  background-color: var(--white);
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar__nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar__nav li {
+  margin: 15px 0;
+}
+
+.sidebar__nav a {
+  display: flex;
+  align-items: center;
+  color: #030303;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 10px 15px;
+  background-color: transparent;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar__nav li:hover {
+  background-color: var(--liteGreen);
+  border-radius: 12px;
+}
+
+.sidebar__nav li {
+  padding: 11px 0;
+}
+
+.sidebar__nav img.icon {
+  transition: filter 0.3s ease;
+  margin-right: 10px;
+}
+
+.sidebar__nav img.icon:hover {
+  transition: filter 0.3s ease;
+  margin-right: 10px;
+}
+
+.sidebar__nav span {
+  display: inline-block;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 19px 20px;
+  background-color: var(--white);
+}
+
+.header .greeting {
+  display: flex;
+  flex-direction: column;
+  font-family: "Urbanist";
+  font-size: 24px;
+  font-weight: 700;
+  margin-left: 25px;
+}
+
+.header .greeting h1 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.header .greeting p {
+  margin: 0 0 0 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.header .search {
+  display: flex;
+  align-items: center;
+  background-color: #f1f1f1;
+  border-radius: 20px;
+  padding: 5px 10px;
+  width: 412px;
+  height: 48px;
+  box-sizing: border-box;
+}
+
+.header .search input {
+  border: none;
+  background: none;
+  outline: none;
+  margin-left: 5px;
+  flex: 1;
+}
+
+.header .search span {
+  margin-left: auto;
+  margin-right: 6px;
+}
+
+.header .icons {
+  display: flex;
+  align-items: center;
+}
+
+.header .icons img {
+  cursor: pointer;
+}
+
+.header .profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header .profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.header .profile .name {
+  font-family: "Urbanist";
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.header .profile .role {
+  font-family: "Urbanist";
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-darkGrey);
+}
+
 .dashboard {
+  padding: 20px;
   font-family: "Urbanist";
   background-color: var(--color-lightGrey);
   display: grid;
