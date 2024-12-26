@@ -90,6 +90,17 @@ document.addEventListener("DOMContentLoaded", function () {
       markFieldAsError(newPasswordInput);
       alertError.textContent = "Пароли не совпадают";
       alertError.style.color = "red";
+      alertError.style.color = "red";
+      alertError.style.alignContent = "center";
+      alertError.style.textAlign = "center";
+      alertError.style.margin = "20px";
+      alertError.style.borderRadius = "6px";
+      alertError.style.color = "white";
+      alertError.style.backgroundColor = "#ff4141";
+      alertError.style.width = "200px";
+      alertError.style.height = "70px";
+      alertError.style.opacity = "0.7";
+      return;
       isValid = false;
     } else {
       clearError(newPasswordInput);
@@ -115,6 +126,15 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!user) {
       alertError.textContent = "Пользователь с указанным email не найден";
       alertError.style.color = "red";
+      alertError.style.alignContent = "center";
+      alertError.style.textAlign = "center";
+      alertError.style.margin = "20px";
+      alertError.style.borderRadius = "6px";
+      alertError.style.color = "white";
+      alertError.style.backgroundColor = "#ff4141";
+      alertError.style.width = "400px";
+      alertError.style.height = "70px";
+      alertError.style.opacity = "0.7";
       return;
     }
 
@@ -122,6 +142,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     alertError.textContent = "Пароль успешно обновлен";
     alertError.style.color = "green";
+    alertError.style.alignContent = "center";
+    alertError.style.textAlign = "center";
+    alertError.style.margin = "20px";
+    alertError.style.borderRadius = "6px";
+    alertError.style.color = "white";
+    alertError.style.backgroundColor = "#5DE100";
+    alertError.style.width = "300px";
+    alertError.style.height = "70px";
+    alertError.style.opacity = "0.7";
 
     setTimeout(() => {
       window.location.href = "../html/loginPage.html";

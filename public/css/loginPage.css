@@ -257,7 +257,7 @@ input {
 input[type="radio"] {
   -webkit-appearance: none;
   appearance: none;
-  width: 20px; /* Общий размер кнопки */
+  width: 20px;
   height: 20px;
   border-radius: 50%;
   outline: none;

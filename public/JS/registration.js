@@ -88,7 +88,16 @@ document.addEventListener("DOMContentLoaded", function () {
     if (existingUser) {
       alertError.textContent = "Пользователь с таким email уже существует.";
       alertError.style.color = "red";
-      alertError.style.display = "block";
+      alertError.style.color = "red";
+      alertError.style.alignContent = "center";
+      alertError.style.textAlign = "center";
+      alertError.style.margin = "20px";
+      alertError.style.borderRadius = "6px";
+      alertError.style.color = "white";
+      alertError.style.backgroundColor = "#ff4141";
+      alertError.style.width = "300px";
+      alertError.style.height = "70px";
+      alertError.style.opacity = "0.7";
       return;
     }
 
@@ -120,12 +129,21 @@ document.addEventListener("DOMContentLoaded", function () {
       alertError.textContent =
         "Не удалось зарегистрировать пользователя. Попробуйте снова.";
       alertError.style.color = "red";
+      alertError.style.alignContent = "center";
+      alertError.style.textAlign = "center";
+      alertError.style.margin = "20px";
+      alertError.style.borderRadius = "6px";
+      alertError.style.color = "white";
+      alertError.style.backgroundColor = "#ff4141";
+      alertError.style.width = "300px";
+      alertError.style.height = "70px";
+      alertError.style.opacity = "0.7";
     }
   }
 
   signUpButton.addEventListener("click", registrationUsers);
 
   linkButton.addEventListener("click", () => {
-    window.location.href = "../html/registrationPage.html";
+    window.location.href = "../html/loginPage.html";
   });
 });

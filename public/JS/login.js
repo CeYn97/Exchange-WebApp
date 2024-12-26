@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
     try {
       const response = await fetch("http://localhost:3000/users");
       if (!response.ok) {
-        throw new Error("Ошибка получения user");
+        throw new Error("Ошибка получения пользователей");
       }
       return await response.json();
     } catch (error) {
-      console.error("Ошибка получения user:", error);
+      console.error("Ошибка получения пользователей:", error);
       return [];
     }
   }
@@ -22,42 +22,29 @@ document.addEventListener("DOMContentLoaded", function () {
   function validateFields() {
     const email = emailInput.value.trim();
     const password = passwordInput.value.trim();
-    const radioButtons = document.querySelectorAll('input[type="radio"]');
-    let isRadioChecked = false;
+    const radioChecked = document.querySelector('input[type="radio"]:checked');
     let isValid = true;
 
-    radioButtons.forEach((radio) => {
-      if (!radio.checked) {
-        radio.style.border = "2px solid red";
-      } else {
-        radio.style.border = "1px solid #cbd5e0";
-        isRadioChecked = true;
-      }
-    });
-
-    if (!isRadioChecked) {
-      isValid = false;
-    }
-
-    function markFieldAsError(field) {
-      field.classList.add("input-error");
-      isValid = false;
-    }
-
-    function clearError(field) {
-      field.classList.remove("input-error");
-    }
-
     if (!email) {
-      markFieldAsError(emailInput);
+      emailInput.classList.add("input-error");
+      isValid = false;
     } else {
-      clearError(emailInput);
+      emailInput.classList.remove("input-error");
     }
 
     if (!password) {
-      markFieldAsError(passwordInput);
+      passwordInput.classList.add("input-error");
+      isValid = false;
     } else {
-      clearError(passwordInput);
+      passwordInput.classList.remove("input-error");
+    }
+
+    if (!radioChecked) {
+      alertError.textContent = "Выберите опцию 'Remember me'";
+      alertError.style.color = "red";
+      isValid = false;
+    } else {
+      alertError.textContent = "";
     }
 
     return isValid;
@@ -70,15 +57,45 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
+    const email = emailInput.value.trim();
+    const password = passwordInput.value.trim();
     const users = await fetchUsers();
 
-    if (
-      users.some((user) => user.email === email && user.password === password)
-    ) {
+    if (users.length === 0) {
+      alertError.textContent = "Ошибка подключения к базе данных";
+      alertError.style.color = "red";
+      alertError.style.color = "red";
+      alertError.style.alignContent = "center";
+      alertError.style.textAlign = "center";
+      alertError.style.margin = "20px";
+      alertError.style.borderRadius = "6px";
+      alertError.style.color = "white";
+      alertError.style.backgroundColor = "#ff4141";
+      alertError.style.width = "300px";
+      alertError.style.height = "70px";
+      alertError.style.opacity = "0.7";
+      return;
+    }
+
+    const user = users.find(
+      (user) => user.email === email && user.password === password
+    );
+
+    if (user) {
       window.location.href = "../html/mainPage.html";
     } else {
       alertError.textContent = "Неправильный логин или пароль";
       alertError.style.color = "red";
+      alertError.style.color = "red";
+      alertError.style.alignContent = "center";
+      alertError.style.textAlign = "center";
+      alertError.style.margin = "20px";
+      alertError.style.borderRadius = "6px";
+      alertError.style.color = "white";
+      alertError.style.backgroundColor = "#ff4141";
+      alertError.style.width = "300px";
+      alertError.style.height = "70px";
+      alertError.style.opacity = "0.7";
     }
   }
 

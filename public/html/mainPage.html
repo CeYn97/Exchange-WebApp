@@ -10,6 +10,16 @@
   <body>
     <div class="layout">
       <aside class="sidebar">
+        <header class="navigation__header">
+          <img
+            class="navigation__header__image"
+            src="../img/mainLogo.svg"
+            alt="mainLogo"
+          />
+          <h1 class="navigation__header__title">
+            Lorem<span class="navigation__header__title--black">Ipsum</span>
+          </h1>
+        </header>
         <nav class="sidebar__nav">
           <ul>
             <li class="nav-item" data-link="Dashboard">
@@ -311,10 +321,230 @@
               </svg>
             </section>
           </section>
-          <section class="dashboard__block dashboard__block--wide"></section>
-          <section class="dashboard__block"></section>
-          <section class="dashboard__block dashboard__block--wide"></section>
-          <section class="dashboard__block"></section>
+          <section class="dashboard__block dashboard__block--wide">
+            <header class="dashboard__block__header">
+              <section class="dashboard__block__header__left">
+                <h4
+                  class="dashboard__block__header__title dashboard__block__header__title--grey"
+                >
+                  Overall sales
+                </h4>
+                <h3
+                  class="dashboard__block__content__value dashboard__block__header__left"
+                >
+                  £56,345.98
+                </h3>
+              </section>
+              <span class="dashboard__block__header__trending">
+                <img
+                  class="dashboard__block__header__trending__image"
+                  src="../img/trending-up.png"
+                  alt="trending"
+                />
+                23,5%
+              </span>
+              <section class="dashboard__block__header__center__topics">
+                <span
+                  class="dashboard__block__header__center__topics_element dashboard__block__header__center__topics_element--salad"
+                  >Organic</span
+                >
+                <span class="dashboard__block__header__center__topics_element"
+                  >Professional</span
+                >
+              </section>
+              <button
+                type="button"
+                class="dashboard__block__header__filter dashboard__block__header__filter--calendar"
+              >
+                Last 7 month
+                <img
+                  class="dashboard__block__header__filter_image"
+                  src="../img/calendar2.svg"
+                  alt="down arrow icon"
+                />
+              </button>
+            </header>
+            <section class="dashboard__block__content__plot2">
+              <img
+                class="dashboard__block__content__plot2_image"
+                src="../img/plot2.svg"
+                alt="plot2"
+              />
+            </section>
+          </section>
+          <section class="dashboard__block">
+            <header class="dashboard__block__header">
+              <h3
+                class="dashboard__block__header__title dashboard__block__header"
+              >
+                Sales report
+              </h3>
+              <button type="button" class="dashboard__block__header__filter">
+                Month
+                <img
+                  class="dashboard__block__header__filter_image"
+                  src="../img/chevron-down-icon.svg"
+                  alt="down arrow icon"
+                />
+              </button>
+            </header>
+            <section
+              class="dashboard__block__content dashboard__block__content--high"
+            >
+              <img
+                class="dashboard__block__content__chart"
+                src="../img/Chart.svg"
+                alt="chart"
+              />
+              <section class="dashboard__block__content__chart_legend">
+                <span
+                  class="dashboard__block__content__chart_legend__element dashboard__block__content__chart_legend__element--bright_yellow"
+                  >Google</span
+                >
+                <span
+                  class="dashboard__block__content__chart_legend__element dashboard__block__content__chart_legend__element--yellow"
+                  >Personal</span
+                >
+                <span class="dashboard__block__content__chart_legend__element"
+                  >others</span
+                >
+              </section>
+              <button type="button" class="dashboard__block__content__button">
+                Deposit now
+              </button>
+            </section>
+          </section>
+          <section
+            class="dashboard__block dashboard__block--wide dashboard__block__users"
+          >
+            <h2 class="recent-order__title">Recent Order</h2>
+
+            <table class="recent-order__table">
+              <thead>
+                <tr class="recent-order__header">
+                  <th class="recent-order__header-cell">No</th>
+                  <th class="recent-order__header-cell">User Name</th>
+                  <th class="recent-order__header-cell">Order Date</th>
+                  <th class="recent-order__header-cell">Status</th>
+                  <th class="recent-order__header-cell">Price</th>
+                  <th class="recent-order__header-cell">Customers</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="recent-order__row">
+                  <td class="recent-order__cell recent-order__cell--number">
+                    01
+                  </td>
+                  <td class="recent-order__cell">
+                    <div class="user-info">
+                      <img
+                        class="user-info__image"
+                        src="../img/profileAvatar1.svg"
+                        alt="User Image"
+                      />
+                      <div class="user-info__details">
+                        <strong>Shirt Creme</strong>
+                        <p>#A4064B</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="recent-order__cell">
+                    <div>
+                      <span>March 24, 2022</span><br />
+                      <span class="recent-order__cell--time">09.20 AM</span>
+                    </div>
+                  </td>
+                  <td class="recent-order__cell">
+                    <span class="status status--received">Received</span>
+                  </td>
+                  <td class="recent-order__cell recent-order__cell__price">
+                    £130
+                  </td>
+                  <td class="recent-order__cell">
+                    <div>
+                      <strong>Jenny Wilson</strong><br />
+                      <span>Branding</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="recent-order__row">
+                  <td class="recent-order__cell recent-order__cell--number">
+                    02
+                  </td>
+                  <td class="recent-order__cell">
+                    <div class="user-info">
+                      <img
+                        class="user-info__image"
+                        src="../img/profileAvavtar2.png"
+                        alt="User Image"
+                      />
+                      <div class="user-info__details">
+                        <strong>Shirt Creme</strong>
+                        <p>#A4064B</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="recent-order__cell">
+                    <div>
+                      <span>March 24, 2022</span><br />
+                      <span class="recent-order__cell--time">09.20 AM</span>
+                    </div>
+                  </td>
+                  <td class="recent-order__cell">
+                    <span class="status status--shipping">Shipping</span>
+                  </td>
+                  <td class="recent-order__cell recent-order__cell__price">
+                    £130
+                  </td>
+                  <td class="recent-order__cell">
+                    <div>
+                      <strong>Devon Lane</strong><br />
+                      <span>Branding</span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section
+            class="dashboard__block dashboard__block dashboard__block--high"
+          >
+            <header class="dashboard__block__header">
+              <h3
+                class="dashboard__block__header__title dashboard__block__header dashboard__block__header__title--size"
+              >
+                Recent Order
+              </h3>
+              <button
+                type="button"
+                class="dashboard__block__header__filter dashboard__block__header__filter--calendar dashboard__block__header__filter--calendar--smaller"
+              >
+                Last 7 month
+                <img
+                  class="dashboard__block__header__filter_image"
+                  src="../img/calendar2.svg"
+                  alt="down arrow icon"
+                />
+              </button>
+            </header>
+            <section
+              class="dashboard__block__content dashboard__block__content--high"
+            >
+              <img
+                class="dashboard__block__content__bars"
+                src="../img/Bars.svg"
+                alt="bars"
+              />
+              <section class="dashboard__block__content__dates">
+                <p class="dashboard__block__content__dates__date">24 Jan</p>
+                <p class="dashboard__block__content__dates__date">25 Jan</p>
+                <p class="dashboard__block__content__dates__date">26 Jan</p>
+                <p class="dashboard__block__content__dates__date">27 Jan</p>
+                <p class="dashboard__block__content__dates__date">28 Jan</p>
+                <p class="dashboard__block__content__dates__date">29 Jan</p>
+              </section>
+            </section>
+          </section>
         </main>
       </div>
     </div>
