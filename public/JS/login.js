@@ -42,6 +42,16 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!radioChecked) {
       alertError.textContent = "Выберите опцию 'Remember me'";
       alertError.style.color = "red";
+      alertError.style.color = "red";
+      alertError.style.alignContent = "center";
+      alertError.style.textAlign = "center";
+      alertError.style.margin = "20px";
+      alertError.style.borderRadius = "6px";
+      alertError.style.color = "white";
+      alertError.style.backgroundColor = "#ff4141";
+      alertError.style.width = "300px";
+      alertError.style.height = "70px";
+      alertError.style.opacity = "0.7";
       isValid = false;
     } else {
       alertError.textContent = "";
