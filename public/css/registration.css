@@ -302,3 +302,138 @@ input[type="radio"]:checked::before {
   background-color: #008ffd;
   transform: translate(-50%, -50%) scale(1);
 }
+
+@media (max-width: 768px) {
+  .headerSection {
+    margin-top: 40px;
+  }
+
+  .h1 {
+    font-size: 28px;
+  }
+
+  .wrapper {
+    width: 85%;
+    max-width: 500px;
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .heading {
+    font-size: 28px;
+  }
+
+  .namesForm {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .emailForm,
+  .passwordForm {
+    width: 100%;
+  }
+
+  .input__TypeOne,
+  .input__TypeSecond,
+  .input__TypeThird {
+    width: 100%;
+  }
+
+  .passwordWrapper {
+    width: 100%;
+  }
+
+  .signButton {
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  .divider__container {
+    margin: 24px 0;
+  }
+
+  .authButton {
+    width: 48%;
+    height: 48px;
+    font-size: 14px;
+  }
+
+  .linkSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer {
+    font-size: 14px;
+  }
+
+  .termsForm {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .headerSection {
+    margin-top: 20px;
+  }
+
+  .h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .wrapper {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  .heading {
+    font-size: 24px;
+  }
+
+  .namesForm {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .input__TypeOne,
+  .input__TypeSecond,
+  .input__TypeThird {
+    width: 100%;
+  }
+
+  .signButton {
+    width: 100%;
+    height: 50px;
+  }
+
+  .divider__container {
+    margin: 20px 0;
+  }
+
+  .authButton {
+    width: 100%;
+    height: 50px;
+    font-size: 14px;
+  }
+
+  .linkSection {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer {
+    font-size: 12px;
+  }
+
+  .termsForm {
+    margin-left: 10px;
+  }
+}

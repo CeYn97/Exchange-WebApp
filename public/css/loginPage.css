@@ -290,3 +290,111 @@ input[type="radio"]:checked::before {
 #error-message {
   color: red;
 }
+
+@media screen and (max-width: 600px) {
+  .wrapper {
+    width: 90%;
+    height: auto;
+    min-height: 600px;
+    margin: 20px auto;
+    padding: 20px 0;
+  }
+
+  .headerSection {
+    margin-top: 30px;
+  }
+
+  .h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .input__TypeSecond,
+  .input__TypeThird {
+    width: 100%;
+    max-width: 100%;
+    height: 65px;
+    font-size: 16px;
+    padding: 18px;
+  }
+
+  .termsForm {
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .radioLabel {
+    justify-content: center;
+    font-size: 16px;
+  }
+
+  .forgotPassword {
+    font-size: 16px;
+  }
+
+  .signButton {
+    width: 80%;
+    height: 65px;
+    font-size: 18px;
+  }
+
+  .linkSection {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .authButton {
+    width: 80%;
+    height: 65px;
+  }
+
+  .divider__container {
+    margin: 30px 20px;
+  }
+
+  .divider__line1,
+  .divider__line2 {
+    margin: 0 10px;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  input[type="radio"] {
+    width: 24px;
+    height: 24px;
+  }
+
+  input[type="radio"]::before {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .h1 {
+    font-size: 24px;
+  }
+
+  .loginText {
+    font-size: 28px;
+  }
+
+  .input__TypeSecond,
+  .input__TypeThird {
+    height: 70px;
+    font-size: 18px;
+    padding: 20px;
+  }
+
+  .signButton {
+    width: 80%;
+    height: 70px;
+    font-size: 20px;
+  }
+}
